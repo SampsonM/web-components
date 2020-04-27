@@ -6,7 +6,7 @@
 - Current websites use undescriptive markup, generice divs, spans etc
 - No component standard
 - Style conflicts, which results in iframes, !important
-- No native templates so lots of approaches with frameworks
+- No native templates so lots of different approaches used by different frameworks
 - No bundling standard to bundle all
 - Static site generators require minimal amount of tooling using web components, masisvely reducing bundle size
 
