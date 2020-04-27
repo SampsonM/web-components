@@ -31,6 +31,6 @@ Frameworks allow for things such as concurrent rendering which are not included 
 #
 ## Why learn web components?
 
-It's important to know the underlying functionality before the  abstraction, otherwise you won't undertsand why the avstraction has broken and thus how to fix your issues.
+It's important to know the underlying functionality before the  abstraction, otherwise you won't undertsand why the abstraction has broken and thus how to fix your issues.
 
-Fewer integration mistakes, clearer common ap/interface, easily replaced and upgraded, descriptive markup!!
+Fewer integration mistakes, clearer common api/interface, easily replaced and upgraded, descriptive markup!!
