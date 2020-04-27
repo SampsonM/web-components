@@ -5,10 +5,10 @@
 
 - Current websites use undescriptive markup, generice divs, spans etc
 - No component standard
-- Style conflicts, which results in iframes, !important
+- Style conflicts, which results in hacks using iframes or !important
 - No native templates so lots of different approaches used by different frameworks
 - No bundling standard to bundle all
-- Static site generators require minimal amount of tooling using web components, masisvely reducing bundle size
+- Static site generators require minimal amount of tooling using web components, masisvely reducing bundle size (Static sites make up for large percentage of the web)
 
 Web components are not here to tackle state management within the UI, thats the purpose of the framework. Web Components are about allowing use of the same UI components across frameworks.
 Frameworks allow for things such as concurrent rendering, 
@@ -22,7 +22,7 @@ Frameworks allow for things such as concurrent rendering,
 - Templates
 	- allow inert reusable markup
 - Custom Elements
-	- Define our own elements extending html
+	- Define our own elements extending existing html elements
 - Shadow DOM
 	- encapsulation of markup & styling
 - Imports
