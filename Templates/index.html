@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<template id="mytemplate">
+		<div>
+			I'm coming from a <span class="adjective">pretty decent</span> template.
+			I've been copied <span class="copies"></span> times.
+		</div>
+
+		<template id="header">
+			<div>Header!</div>
+		</template>
+	</template>
+
+	Hello world! I still appear first even though the template is before me!
+
+	<button onclick="copyTemplate()">Copy template</button>
+
+	<script>
+		let numberOfCopies = 0
+
+		function copyTemplate() {
+			const template = document.querySelector('#mytemplate')
+			const clone = document.importNode(template.content, true)
+			clone.querySelector('.adjective').textContent = 'shite!'
+			clone.querySelector('.copies').textContent = ++numberOfCopies
+
+			document.body.appendChild(clone)
+	
+			const header = document.querySelector('#header')
+			console.log(header)
+			const headerClone = document.importNode(header.content, true)
+			document.body.appendChild(headerClone)
+		}
+		
+	</script>
+</body>
+</html>

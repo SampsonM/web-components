@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Custom Elements</title>
+</head>
+<body>
+	
+	<!-- Create Element -->
+	<!-- Option 1 - instantiation -->
+	<make-shift-comment></make-shift-comment>
+
+	<script>
+		// Normal instantiation
+		const CommentProto = Object.create(HTMLElement.prototype)
+		
+		CommentProto.createdCallback = function() {
+			this.innerHTML = '<h2>I am a comment</h2><textarea></textarea></br><input type="submit">'
+		}
+
+		const Comment = document.registerElement('make-shift-comment', {
+			prototype: CommentProto
+		})
+
+		// Option 2 - instantiation
+		const comment = new Comment()
+		document.body.appendChild(comment)
+
+		// Option 3 - instantiation
+		const comment3 = document.createElement('make-shift-comment')
+		document.body.appendChild(comment3)
+
+		// Option 4 - instantiation
+		// document.body.innerHTML = '<make-shift-comment></make-shift-comment>'
+	</script>
+
+	<!-- Extend native -->
+	<!-- Option 1 - extend native -->
+	<button is="my-button"></button>
+	<script>
+		// Extend native elements
+		const Proto = Object.create(HTMLButtonElement.prototype)
+
+		Proto.createdCallback = function() {
+			this.innerHTML = 'my orange bloody button'
+			this.value = 'Default value'
+			this.style.color = "orange"
+		}
+
+		const MyButton = document.registerElement('my-button', {
+			prototype: Proto,
+			extends: 'button'
+		})
+
+		// Option 2 - extend native
+		document.body.appendChild(new MyButton())
+
+		// Option 3 - extend native
+		const option3 = document.createElement('button', 'my-button')
+		document.body.appendChild(option3)
+
+		// Option 4
+		// document.body.innerHTML = '<button is="my-button"></button>'
+
+	</script>
+
+	<hello-world></hello-world>
+	<!-- Lifecycle -->
+	<script>
+		const ProtoHW = Object.create(HTMLElement.prototype)
+
+		ProtoHW.createdCallback = function() {
+			this.innerHTML = '<h1>Hello World</h1>'
+			console.log('created!')
+		}
+		ProtoHW.attachedCallback = function() {
+			console.log('attached!')
+		}
+		ProtoHW.detachedCallback = function() {
+			console.log('detached!')
+		}
+		ProtoHW.attributeChangedCallback = function(attr, oldVal, newVal) {
+			// Do something when attr changes
+			console.log(`${attr} changed!`, oldVal, newVal)
+		}
+
+		const hello = document.registerElement('hello-world', {
+			prototype: ProtoHW
+		})
+
+		document.querySelector('hello-world').setAttribute('test', 1)
+
+		document.querySelector('hello-world').remove()
+	</script>
+	
+</body>
+</html>
