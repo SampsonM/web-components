@@ -3,7 +3,7 @@
 
 ## Why?
 
-- Current websites us undescriptive markup, generice divs, spans etc
+- Current websites use undescriptive markup, generice divs, spans etc
 - No component standard
 - Style conflicts, which results in iframes, !important
 - No native templates so lots of approaches with frameworks
