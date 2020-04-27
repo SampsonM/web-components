@@ -11,7 +11,7 @@
 - Static site generators require minimal amount of tooling using web components, masisvely reducing bundle size (Static sites make up for large percentage of the web)
 
 Web components are not here to tackle state management within the UI, thats the purpose of the framework. Web Components are about allowing use of the same UI components across frameworks.
-Frameworks allow for things such as concurrent rendering, 
+Frameworks allow for things such as concurrent rendering which are not included in web standard
 
 #
 ## Solution?
